@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<odoo>
+       <record id="patient_form" model="ir.ui.view">
+        <field name="name">patient.wizard.form</field>
+        <field name="model">patient.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Patient_view">
+                  
+                <group>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </group>
+                <footer>
+                    <button string="Report" type="object" name="action_print_xlsx"/>
+                    <button string="cancel"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="action_patient_wizard" model="ir.actions.act_window">
+        <field name="name">patient Wizard</field>
+        <field name="res_model">patient.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+      <menuitem
+        id="menu_report"
+        name="Report"
+        action="action_patient_wizard"
+        parent="patient_menu"
+        sequence="40"/>
+    
+</odoo>
+        
