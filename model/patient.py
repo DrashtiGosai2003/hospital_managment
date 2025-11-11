@@ -24,6 +24,7 @@ class Patient(models.Model):
         comodel_name='res.partner',
         string="Customer/Vendor",
         )
+    appointment=fields.Char("appointment")
 
     
     # def _name_search(self,name='',args=None,operator='ilike',limit=100,name_get_uid=None):
